@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kindness Collective">
+    <meta name="author" content="Camryn Martin">
+    <title>Kindness Collective</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .hero-section {
+            padding-top: 150px;
+            padding-bottom: 150px; /* Added more space to ensure button aligns better */
+            background: linear-gradient(to bottom, #28a745, #d4edda);
+        }
+
+        .hero-section img {
+            max-height: 300px;
+            margin-bottom: 20px;
+        }
+
+        .navbar-brand img {
+            height: 50px;
+        }
+
+        .image-gallery img {
+            border: 5px solid #add8e6; /* Light blue border */
+            border-radius: 15px; /* Rounded corners */
+            margin: 10px;
+            width: 100px; /* Adjusted size for better fit */
+            height: 100px; /* Adjusted size for better fit */
+            object-fit: contain; /* Ensure images fit within dimensions */
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-header {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .tooltip-inner {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #d4edda;
+        }
+
+        .btn-floating {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #28a745;
+            color: white;
+            border-radius: 50%;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            font-size: 1.5rem;
+        }
+
+        .btn-floating:hover {
+            background-color: #1e7e34;
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar-example" data-bs-offset="100">
+
+    <!-- Navigation -->
+    <nav id="navbar-example" class="navbar navbar-expand-lg navbar-light fixed-top bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <img src="kindness_collective_logo.png" alt="Kindness Collective Logo">
+                <span class="fw-bold text-success">Kindness Collective</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kindness-tracker">Log Kindness</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#impact">Our Impact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#stories">Stories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section text-center">
+        <div class="container">
+            <img src="kindness_collective_logo.png" alt="Kindness Collective Logo">
+            <h1 class="display-4 fw-bold">Welcome to Kindness Collective</h1>
+            <p class="lead">Join us in creating ripples of kindness across the globe!</p>
+            <a href="#kindness-tracker" class="btn btn-success mt-3">Log Your Kindness</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container text-center">
+            <h2>About Us</h2>
+            <p>Kindness Collective is a global initiative to inspire, track, and celebrate acts of kindness. Every small act contributes to a larger movement of positivity and goodwill. Be part of the collective today!</p>
+        </div>
+    </section>
+
+    <!-- Kindness Tracker Section -->
+    <section id="kindness-tracker" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2>Log Your Kindness</h2>
+            <form>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Your Name (optional)">
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Location (e.g., New York)">
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" rows="4" placeholder="Describe your act of kindness"></textarea>
+                </div>
+                <div class="mb-3">
+                    <input type="file" class="form-control" placeholder="Upload a photo (optional)">
+                </div>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="py-5">
+        <div class="container text-center">
+            <h2>Our Impact</h2>
+            <p>Here’s what our community has accomplished:</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <h3><i class="fa fa-globe"></i> 25 Countries</h3>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <h3><i class="fa fa-heart"></i> 10,000 Acts Logged</h3>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <h3><i class="fa fa-users"></i> 5,000 Participants</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stories Section -->
+    <section id="stories" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2>Kindness Stories</h2>
+            <div id="kindnessCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card p-4">
+                            <h3>Anonymous Generosity in Melbourne</h3>
+                            <p>An anonymous couple paid off lay-by accounts for nearly 100 families at a toy store.</p>
+                            <a href="https://www.example.com/story1" target="_blank" class="btn btn-link">Read More</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card p-4">
+                            <h3>Strangers Helping a Traveling Mother</h3>
+                            <p>Fellow passengers helped a single mother with her child during flight cancellations.</p>
+                            <a href="https://www.example.com/story2" target="_blank" class="btn btn-link">Read More</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card p-4">
+                            <h3>Paying It Forward in Arkansas</h3>
+                            <p>A shopper handed $20 to a stranger in need, inspired by his mother’s request for kindness.</p>
+                            <a href="https://www.example.com/story3" target="_blank" class="btn btn-link">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#kindnessCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#kindnessCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Gallery Section -->
+    <section id="gallery" class="py-5">
+        <div class="container text-center">
+            <h2>Acts of Kindness</h2>
+            <div class="image-gallery">
+                <img src="minimalist_1.jpeg" alt="Minimalist Image 1">
+                <img src="minimalist_2.jpeg" alt="Minimalist Image 2">
+                <img src="minimalist_3.jpeg" alt="Minimalist Image 3">
+                <img src="minimalist_4.jpeg" alt="Minimalist Image 4">
+                <img src="minimalist_5.jpeg" alt="Minimalist Image 5">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container text-center">
+            <h2>Contact Us</h2>
+            <p>Email: support@kindnesscollective.com</p>
+            <p>Follow us on: <a href="https://www.instagram.com/kindnesscollective" target="_blank">Instagram</a></p>
+        </div>
+    </section>
+
+    <!-- Floating Button -->
+    <a href="#home" class="btn-floating">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-success text-white">
+        <div class="container text-center">
+            <p>&copy; 2024 Kindness Collective</p>
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#kindness-tracker">Log Kindness</a>
+                <a href="#impact">Our Impact</a>
+                <a href="#stories">Stories</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
